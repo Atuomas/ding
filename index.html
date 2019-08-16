@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Socket.IO Clicker</title>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>ding</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-</head>
-<body>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<div class="container">
-    <div class="row">
-      <h1 style="text-align: center">Click Counter</h1> </div>
-    <div class="row">
-
-        <div class="col-md-12 ">
-            <p style="text-align: center"><button id='btn_click' class="bnt btn-lg btn-success">Click Me!</button></p>
-
-            <p style="text-align: center">Click counts:<span id="counter"></span></p>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    $(function () {
-	
-	//Connect to the socket
+  <body onload="loadTheDings()">
+    <!-- header + modal -->
+    <header>
+      <h1>DING.</h1>
+    </header>
+    <main class="container">
+      <div class="content">
+        <button
+          type="button"
+          class="button"
+          onclick="doTheDings()"
+          id="btn_click"
+        ></button>
+        <audio id="audio" src="assets/ding.mp3"></audio>
+        <audio id="audiOtto" src="assets/sina-oot-pilalla-kohta.mp3"></audio>
+        <br />
+        <p id="counter"></p>
+      </div>
+    </main>
+    <script>
+      $(function() {
+        //Connect to the socket
         var socket = io();
 
-        socket.on('connect', function()
-        {
-           console.log('Connected!');
+        socket.on("connect", function() {
+          console.log("Connected!");
         });
 
         //Listen for server
-        socket.on('click_count',function(value)
-        {
-            $('#counter').html(value); //Set counter value
+        socket.on("click_count", function(value) {
+          $("#counter").html(value); //Set counter value
         });
 
         //Sends button click to server
-        $('#btn_click').click(function()
-        {
-            socket.emit('clicked');
+        $("#btn_click").click(function() {
+          socket.emit("clicked");
         });
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

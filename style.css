@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: helvetica;
+}
+body {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  height: 10%;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 3.5rem;
+  padding-left: 5%;
+}
+
+main {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+p {
+  padding: 8px;
+}
+
+.button {
+  height: 125px;
+  width: 160px;
+  padding: 0;
+  background-size: 160px 125px;
+  background-repeat: no-repeat;
+  background-image: url("assets/ding-icon-up.png");
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button:active {
+  background-image: url("assets/ding-icon-down.png");
+  background-size: 160px 125px;
+  background-repeat: no-repeat;
+}
