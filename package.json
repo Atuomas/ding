@@ -1,0 +1,9 @@
+{
+    "name": "ClickME",
+    "version": "0.0.1",
+    "description": "Multiclick",
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^2.2.0"
+    }
+}
