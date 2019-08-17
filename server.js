@@ -1,18 +1,20 @@
-var express = require('express');
-var app=express();
-var http = require('http').Server(app);
-var server = require('socket.io')(http);
-var port=8080;
+const express = require('express');
+const app=express();
+const http = require('http').Server(app);
+const server = require('socket.io')(http);
+const port=8080;
 
 app.use(express.static(__dirname + '/public'));
 
-var counter=0;
+let counter=0;
 
 app.get('/', function(req, res) {
-
         res.sendFile(__dirname + '/index.html');
     });
 
+app.get('/click_count', function(req, res) {
+	res.json({"clicks": counter});
+});
 
 server.on('connection', function(socket)
 {
