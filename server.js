@@ -4,6 +4,8 @@ var http = require('http').Server(app);
 var server = require('socket.io')(http);
 var port=8080;
 
+app.use(express.static(__dirname + '/public'));
+
 var counter=0;
 
 app.get('/', function(req, res) {
