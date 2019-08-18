@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8" />
-    <title>ding</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-
-  <body>
-    <!-- header + modal -->
-    <header>
+<head lang="en">
+  <meta charset="UTF-8" />
+  <title>ding</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <!-- header + modal -->
+  <header>
+    <div class="header-text">
       <h1>DING.</h1>
-    </header>
-    <main class="container">
-      <div class="content">
-        <button
-          type="button"
-          class="button"
-          onclick="makeItDing()"
-          id="btn_click"
-        ></button>
-        <audio id="audio" src="assets/ding.mp3"></audio>
-        <audio id="audiOtto" src="assets/sina-oot-pilalla-kohta.mp3"></audio>
-        <br />
-        <p id="counter"></p>
-      </div>
-    </main>
-  </body>
-</html>
+     <div style="display:inline"> <h6 onclick="showRelease()">2.1.0</h6> <p id="current-release" style="display:none">visual fixes and adds release notes</p> </div>
+      <div id="release-notes" style="display:none">
 
+        <p><b>2.0.0</b> displays all dings from everyone ever</p>
+        <p><b>1.1.1</b> bug fixes</p>
+        <p><b>1.1.0</b> press s</p>
+        <p><b>1.0.0</b> basic functionality, supports local cache dings</p>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="content">
+      <button type="button" class="button" onclick="makeItDing()" id="btn_click"></button>
+      <audio id="audio" src="assets/ding.mp3"></audio>
+      <audio id="audiOtto" src="assets/sina-oot-pilalla-kohta.mp3"></audio>
+      <br />
+      <p id="counter"></p>
+    </div>
+  </main>
+</body>
+</html>

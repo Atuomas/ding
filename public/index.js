@@ -28,6 +28,19 @@ document.addEventListener("keydown", function(e) {
   }
 });
 
+function showRelease() {
+  var release = document.getElementById("release-notes");
+    var currentRelease = document.getElementById("current-release");
+  if (release.style.display == "none") {
+    release.style.display = "block";
+    currentRelease.style.display = "inline";
+  }
+else {
+    release.style.display = "none";
+    currentRelease.style.display = "none";
+  }
+}
+
 function makeItDing() {
   var audio = document.getElementById("audio");
   if (audio.paused) {
